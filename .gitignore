@@ -1,0 +1,9 @@
+# Archivos temporales
+*.log
+*.tmp
+.DS_Store
+
+# Configuración de sistema
+node_modules/
+.env
+dist/

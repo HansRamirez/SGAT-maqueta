@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Declaración Productos - SGAT</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <main class="main-content">
+    <h2>🌿 Declaración Jurada de Productos SAG</h2>
+    <form class="form" id="productosForm">
+      <label for="rutDeclarante">RUT del declarante</label>
+      <input type="text" id="rutDeclarante" required placeholder="12345678-9">
+      <small style="color:#aaa">Ej: 12345678-9</small>
+
+      <label for="tipoProducto">Tipo de producto</label>
+      <input type="text" id="tipoProducto" required>
+
+      <label for="origen">País de origen</label>
+      <input type="text" id="origen" required>
+
+      <label for="cantidad">Cantidad (unidades/kg)</label>
+      <input type="number" id="cantidad" required min="1">
+
+      <label for="declaracionPDF">Adjuntar declaración firmada (PDF)</label>
+      <input type="file" id="declaracionPDF" accept=".pdf" required>
+
+      <button type="submit" class="btn btn-green">Enviar Declaración</button>
+      <p class="info">✅ Declaración será evaluada por el SAG y registrada en sistema.</p>
+    </form>
+  </main>
+
+  <div id="footer"></div>
+  <script src="../js/main.js"></script>
+</body>
+</html>

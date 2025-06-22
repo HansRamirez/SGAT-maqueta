@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trámite Vehicular - SGAT</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <main class="main-content">
+    <h2>🚗 Trámite Salida Temporal de Vehículo</h2>
+    <form class="form" id="vehiculoForm">
+      <label for="rut">RUT del propietario</label>
+      <input type="text" id="rut" name="rut" required placeholder="12345678-9" />
+      <small style="color: #aaa;">Ejemplo: 12345678-9</small>
+
+      <label for="nombre">Nombre completo</label>
+      <input type="text" id="nombre" name="nombre" required />
+
+      <label for="placa">Patente del vehículo</label>
+      <input type="text" id="placa" name="placa" required placeholder="ABC123" pattern="^[A-Z]{3}[0-9]{3}$" />
+
+      <label for="fecha">Fecha de salida</label>
+      <input type="date" id="fecha" name="fecha" required />
+
+      <label for="doc">Adjuntar autorización (PDF simulado)</label>
+      <input type="file" id="doc" name="doc" accept=".pdf" required />
+
+      <button type="submit" class="btn btn-blue">Enviar Trámite</button>
+      <p class="info">📄 Este formulario validará automáticamente los datos y notificará al sistema. <br> 🛃 Los documentos serán verificados por Aduana.</p>
+    </form>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
