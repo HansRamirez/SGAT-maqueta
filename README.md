@@ -91,6 +91,10 @@ git clone https://github.com/HansRamirez/SGAT-maqueta.git
 
 ---
 
+## 📝 Plan de Pruebas
+📎 [Plan de Pruebas en Sheets](https://docs.google.com/spreadsheets/d/1FReYiRz87yKdGdVPoR7gaAuCkdCd3s3gJHrAsmrejxg/edit?usp=sharing)
+
+
 ## ✍️ Autor
 
 Hans Ramírez  
