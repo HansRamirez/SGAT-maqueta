@@ -11,30 +11,28 @@
 
   <main class="main-content">
     <h2>🚗 Trámite Salida Temporal de Vehículo</h2>
-    <form class="form" id="vehiculoForm">
+    <form class="form form-grid" id="vehiculoForm">
       <label for="rut">RUT del propietario</label>
-      <input type="text" id="rut" name="rut" required placeholder="12345678-9" />
-      <small style="color: #aaa;">Ejemplo: 12345678-9</small>
+      <input type="text" id="rut" name="rut" placeholder="Ej: 12345678-9" required>
+      <div class="error-msg" id="error-rut"></div>
 
-      <label for="nombre">Nombre completo</label>
-      <input type="text" id="nombre" name="nombre" required />
+      <label for="patente">Patente del vehículo</label>
+      <input type="text" id="patente" name="patente" required>
 
-      <label for="placa">Patente del vehículo</label>
-      <input type="text" id="placa" name="placa" required placeholder="ABC123" pattern="^[A-Z]{3}[0-9]{3}$" />
+      <label for="pais">País destino</label>
+      <input type="text" id="pais" name="pais" required>
 
-      <label for="fecha">Fecha de salida</label>
-      <input type="date" id="fecha" name="fecha" required />
-
-      <label for="doc">Adjuntar autorización (PDF simulado)</label>
-      <input type="file" id="doc" name="doc" accept=".pdf" required />
+      <label for="archivo">Autorización PDF</label>
+      <input type="file" id="archivo" name="archivo" accept=".pdf" required>
 
       <button type="submit" class="btn btn-blue">Enviar Trámite</button>
-      <p class="info">📄 Este formulario validará automáticamente los datos y notificará al sistema. <br> 🛃 Los documentos serán verificados por Aduana.</p>
+      <div class="resultado" id="resultado-vehiculo"></div>
+      <p class="info">🛃 El sistema registrará el trámite de salida vehicular y generará un respaldo digital para control aduanero.</p>
+
     </form>
   </main>
 
   <div id="footer"></div>
-
   <script src="../js/main.js"></script>
 </body>
 </html>

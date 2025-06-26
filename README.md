@@ -80,23 +80,6 @@ git clone https://github.com/HansRamirez/SGAT-maqueta.git
 
 ---
 
-## 🗂 Versión actual
-
-**Versión 1.0**  
-- Todas las vistas implementadas
-- Validaciones JS funcionales
-- Diseño dark-mode terminado
-- Control de acceso simulado
-- Proyecto versionado correctamente
-
----
-**Versión 1.0 (intermedia)**  
-- Se ha presentado dificultades en repositorio local
-- Se crea nuevo perfil de usuario en SO
-- Se conecta el repositorio y realiza validación
-_Conectado correctamente desde nuevo perfil de Windows._
-
-
 ## 📝 Plan de Pruebas ISO/IEC 25000
 Acceso al registro del plan de pruebas alojado en repositorio externo Google Drive | Google Sheets
 

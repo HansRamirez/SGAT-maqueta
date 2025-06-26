@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Autorización Menor - SGAT</title>
-  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/styles.css" />
 </head>
 <body>
   <div id="navbar"></div>
 
   <main class="main-content">
     <h2>🧒 Autorización Notarial para Salida de Menores</h2>
-    <form class="form" id="menorForm">
+    <form class="form form-grid" id="menorForm">
       <label for="rutMenor">RUT del menor</label>
-      <input type="text" id="rutMenor" required placeholder="12345678-9">
-      <small style="color:#aaa">Ej: 12345678-9</small>
-
-      <label for="nombreMenor">Nombre del menor</label>
-      <input type="text" id="nombreMenor" required>
+      <input type="text" id="rutMenor" name="rutMenor" placeholder="Ej: 12345678-9" required>
+      <div class="error-msg" id="error-rutMenor"></div>
 
       <label for="rutApoderado">RUT del apoderado</label>
-      <input type="text" id="rutApoderado" required placeholder="12345678-9">
-      <small style="color:#aaa">Ej: 12345678-9</small>
+      <input type="text" id="rutApoderado" name="rutApoderado" placeholder="Ej: 12345678-9" required>
+      <div class="error-msg" id="error-rutApoderado"></div>
 
-      <label for="docNotarial">Autorización notarial (PDF)</label>
-      <input type="file" id="docNotarial" accept=".pdf" required>
+      <label for="nombreMenor">Nombre del menor</label>
+      <input type="text" id="nombreMenor" name="nombreMenor" required>
 
-      <button type="submit" class="btn btn-blue">Registrar Autorización</button>
-      <p class="info">📎 El sistema validará los datos y notificará a Aduanas y Policía Internacional.</p>
+      <label for="archivo">Autorización PDF</label>
+      <input type="file" id="archivo" name="archivo" accept=".pdf" required>
+
+      <button type="submit" class="btn btn-blue">Registrar autorización</button>
+      <div class="resultado" id="resultado-menor"></div>
+      <p class="info">👤 El sistema almacenará la autorización notarial y validará los datos del menor y apoderado para el control migratorio.</p>
+
     </form>
   </main>
 

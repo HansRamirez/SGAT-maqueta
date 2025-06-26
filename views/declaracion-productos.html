@@ -1,35 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Declaración Productos - SGAT</title>
-  <link rel="stylesheet" href="../css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Declaración de Productos - SGAT</title>
+  <link rel="stylesheet" href="../css/styles.css" />
 </head>
 <body>
   <div id="navbar"></div>
 
   <main class="main-content">
     <h2>🌿 Declaración Jurada de Productos SAG</h2>
-    <form class="form" id="productosForm">
+    <form class="form form-grid" id="productosForm">
       <label for="rutDeclarante">RUT del declarante</label>
-      <input type="text" id="rutDeclarante" required placeholder="12345678-9">
-      <small style="color:#aaa">Ej: 12345678-9</small>
+      <input type="text" id="rutDeclarante" name="rutDeclarante" placeholder="Ej: 12345678-9" required>
+      <div class="error-msg" id="error-rutDeclarante"></div>
 
-      <label for="tipoProducto">Tipo de producto</label>
-      <input type="text" id="tipoProducto" required>
+      <label for="producto">Producto</label>
+      <input type="text" id="producto" name="producto" required>
 
-      <label for="origen">País de origen</label>
-      <input type="text" id="origen" required>
+      <label for="pais">País de origen</label>
+      <input type="text" id="pais" name="pais" required>
 
-      <label for="cantidad">Cantidad (unidades/kg)</label>
-      <input type="number" id="cantidad" required min="1">
+      <label for="cantidad">Cantidad</label>
+      <input type="number" id="cantidad" name="cantidad" min="1" required>
 
-      <label for="declaracionPDF">Adjuntar declaración firmada (PDF)</label>
-      <input type="file" id="declaracionPDF" accept=".pdf" required>
+      <label for="archivo">Declaración PDF</label>
+      <input type="file" id="archivo" name="archivo" accept=".pdf" required>
 
-      <button type="submit" class="btn btn-green">Enviar Declaración</button>
-      <p class="info">✅ Declaración será evaluada por el SAG y registrada en sistema.</p>
+      <button type="submit" class="btn btn-red">Enviar declaración</button>
+      <div class="resultado" id="resultado-producto"></div>
+      <p class="info">📦 El sistema enviará la declaración al SAG y generará un comprobante para verificación posterior.</p>
+
     </form>
   </main>
 

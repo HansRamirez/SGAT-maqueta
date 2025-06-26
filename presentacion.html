@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎤 Presentación SGAT</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #121212;
+      color: #f0f0f0;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .slide {
+      display: none;
+      padding: 4rem 2rem;
+      height: 100vh;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .slide.active {
+      display: flex;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .slide h2 {
+      color: #00b894;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .slide p {
+      font-size: 1.4rem;
+      margin: 1rem 0;
+    }
+
+    .nav-buttons {
+      position: fixed;
+      bottom: 2rem;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .nav-buttons button {
+      background-color: #00b894;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .nav-buttons button:hover {
+      background-color: #019874;
+    }
+
+    .highlight {
+      color: #74b9ff;
+      font-weight: bold;
+    }
+
+    canvas.confetti {
+      position: fixed;
+      pointer-events: none;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body>
+  <canvas class="confetti" id="confetti-canvas"></canvas>
+
+  <div class="slide active">
+    <h2>📌 SGAT - Sistema de Gestión Aduanera de Trámites</h2>
+    <p>🧠 Proyecto de <span class="highlight">Ingeniería de Software</span></p>
+    <p>🧑‍💻 Desarrollado por: <span class="highlight">Hans Ramírez</span></p>
+    <p>🏫 Duoc UC - 5to Semestre</p>
+  </div>
+
+  <div class="slide">
+    <h2>🎯 Contexto del Proyecto</h2>
+    <p>❗ Problema: Largos tiempos de espera y procesos manuales.</p>
+    <p>🔧 Solución: Digitalización y automatización de documentación.</p>
+    <p>🎁 Beneficios: ⏱️ Reducción de espera • ✅ Validación automática • 📊 Centralización</p>
+  </div>
+
+  <div class="slide">
+    <h2>🧩 Requisitos Priorizados</h2>
+    <p><span class="highlight">🔹 Funcionales:</span> Trámite de vehículos, autorización menores, declaración de productos, Login de usuario y acceso restringido.</p>
+    <p><span class="highlight">🔸 No funcionales:</span> Validación de RUT, ayuda visual (transversal), interfaz clara.</p>
+    <p><span class="highlight">🖥️ IU:</span> Textos claros, idioma español, navegación intuitiva.</p>
+  </div>
+
+  <div class="slide">
+    <h2>🧪 Plan de Pruebas y Versionado</h2>
+    <p>📌 <strong>Primera iteración:</strong> errores en diseño y validación de campos.</p>
+    <p>🔁 <strong>Mejoras:</strong> rediseño, grid, validación completa de RUT.</p>
+     <p>✅ <strong>Mejoras:</strong> en el versionamiento del proyecto, documentación apropiada.</p>
+    <p>📑 <a href="https://docs.google.com/spreadsheets/d/1FReYiRz87yKdGdVPoR7gaAuCkdCd3s3gJHrAsmrejxg" target="_blank">Ver plan de pruebas completo</a></p>
+  </div>
+
+  <div class="slide">
+    <h2>🖥️ Maquetas y Funcionalidades</h2>
+    <p>📝 Formularios con validación real de RUT</p>
+    <p>📎 Archivos adjuntos obligatorios</p>
+    <p>📣 Respuesta visual inmediata</p>
+    <p>🔐 Acceso restringido simulado</p>
+  </div>
+
+  <div class="slide">
+    <h2>📌 Control de Versiones</h2>
+    <p>🧠 Modelo Git Flow aplicado</p>
+    <p>📂 Branches de tipo feature, release y hotfix</p>
+    <p>🧭 <a href="components/gitflow-diagrama.html" target="_blank">Ver diagrama interactivo</a></p>
+    <p>📜 <a href="https://docs.google.com/spreadsheets/d/15NXnY3ykFs-TE9XucyurfLrAmB2EXXO8lzf9On7L_U8" target="_blank">Ver control de versiones</a></p>
+  </div>
+
+  <div class="slide">
+    <h2>🎉 Reflexión Final</h2>
+    <p>✔️ Proyecto con visión de futuro, realismo técnico y buenas prácticas.</p>
+    <p>🔧 Desde el diseño a la validación, integración y control.</p>
+    <p>🚀 ¡Digitalizando la frontera, un formulario a la vez!</p>
+  </div>
+
+  <div class="nav-buttons">
+    <button id="prev">⬅ Anterior</button>
+    <button id="next">Siguiente ➡</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const canvas = document.getElementById('confetti-canvas');
+    let current = 0;
+
+    function showSlide(index) {
+      slides[current].classList.remove('active');
+      current = (index + slides.length) % slides.length;
+      slides[current].classList.add('active');
+
+      // Confetti at last slide
+      if (current === slides.length - 1) {
+        confetti.create(canvas, { resize: true })({
+          particleCount: 120,
+          spread: 90,
+          origin: { y: 0.6 },
+        });
+      }
+    }
+
+    document.getElementById('next').addEventListener('click', () => showSlide(current + 1));
+    document.getElementById('prev').addEventListener('click', () => showSlide(current - 1));
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') showSlide(current + 1);
+      if (e.key === 'ArrowLeft') showSlide(current - 1);
+    });
+  </script>
+</body>
+</html>
