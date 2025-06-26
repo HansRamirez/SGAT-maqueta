@@ -42,6 +42,10 @@ a:hover {
   color: #00cec9;
 }
 
+.navbar .logo:hover {
+  color: #14e169;
+  
+}
 .nav-links {
   list-style: none;
   display: flex;

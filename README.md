@@ -93,8 +93,10 @@ git clone https://github.com/HansRamirez/SGAT-maqueta.git
 
 ## 📝 Plan de Pruebas ISO/IEC 25000
 Acceso al registro del plan de pruebas alojado en repositorio externo Google Drive | Google Sheets
+
 📎 [Plan de Pruebas en Sheets](https://docs.google.com/spreadsheets/d/1FReYiRz87yKdGdVPoR7gaAuCkdCd3s3gJHrAsmrejxg/edit?usp=sharing)
 
+---
 
 ## ✍️ Autor
 
